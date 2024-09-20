@@ -22,6 +22,15 @@ from threading import Lock , Thread , Timer
 from datetime import datetime
 from os.path import isfile, join
 from tls_client import Session
+import ctypes
+import platform
+
+# Check if the system is Windows before setting the console title
+if platform.system() == "Windows":
+    ctypes.windll.kernel32.SetConsoleTitleW(f'[ Discord Promo Checker ] By H4cK3dR4Du#1337 ~ discord.gg/radutool')
+else:
+    # On Linux or macOS, you can't set the console title this way, so we can just skip it
+    pass  # You can log or print something else here if you want
 
 output_lock = threading.Lock()
 red = Fore.RED
